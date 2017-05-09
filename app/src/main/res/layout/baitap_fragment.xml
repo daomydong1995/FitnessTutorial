@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_weight="0.5"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCobap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="0.5"
+            android:background="@android:color/holo_red_light"
+            android:drawableTop="@drawable/ic_cobap"
+            android:elevation="24dp"
+            android:paddingTop="20dp"
+            android:text="@string/cobap"
+            tools:elevation="0dp" />
+
+        <Button
+            android:id="@+id/btnCardio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_weight="0.5"
+            android:background="@android:color/holo_red_light"
+            android:drawableTop="@drawable/ic_cardio"
+            android:paddingTop="20dp"
+            android:text="@string/timmach" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_weight="0.5"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnYoga"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="0.5"
+            android:background="@android:color/holo_orange_light"
+            android:drawableTop="@drawable/ic_yoga"
+            android:paddingTop="20dp"
+            android:text="@string/yogo" />
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="2dp"
+            android:layout_weight="0.5"
+            android:background="@android:color/holo_orange_light"
+            android:drawableTop="@drawable/ic_home"
+            android:paddingTop="20dp"
+            android:text="@string/baitaptainha" />
+    </LinearLayout>
+
+</LinearLayout>
