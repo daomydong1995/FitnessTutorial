@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="bottonBackgroud">#c851a3e1</color>
+    <color name="tagH">#fa2626</color>
+    <color name="tagN">#fdcf18</color>
+    <color name="tagE">#35ef7f</color>
 </resources>

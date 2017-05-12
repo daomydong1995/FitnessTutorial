@@ -25,8 +25,7 @@ import java.net.URL;
 public class SplashScreenActivity extends AppCompatActivity {
     protected boolean _active = true;
     protected int _splashTime = 1000;
-    public static SQLiteHelper sqLiteHelper;
-    String linkimage = "";
+
 
     /**
      * Called when the activity is first created.
@@ -37,8 +36,6 @@ public class SplashScreenActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_sceen);
-        sqLiteHelper = new SQLiteHelper(this, "Baitap.sqlite", null, 1);
-        sqLiteHelper.queryData("CREATE TABLE IF NOT EXISTS BAITAP(Id INTEGER PRIMARY KEY AUTOINCREMENT,type VARCHAR ,ten VARCHAR,tage VARCHAR,tagn VARCHAR,tagh VARCHAR,info VARCHAR,image BLOB )");
 
         // thread for displaying the SplashScreen
         Thread splashTread = new Thread() {

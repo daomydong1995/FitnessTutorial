@@ -1,5 +1,7 @@
 package com.example.daomy.fitnesstutorial3.molde;
 
+import java.util.Objects;
+
 /**
  * Created by daomy on 5/6/2017.
  */
@@ -24,6 +26,8 @@ public class BaiTap {
         this.image = image;
         this.huongdan = huongdan;
     }
+
+
 
     public int getId() {
         return id;
