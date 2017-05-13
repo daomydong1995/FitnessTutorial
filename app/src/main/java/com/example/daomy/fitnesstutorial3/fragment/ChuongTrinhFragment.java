@@ -1,5 +1,6 @@
 package com.example.daomy.fitnesstutorial3.fragment;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -8,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.daomy.fitnesstutorial3.R;
+import com.example.daomy.fitnesstutorial3.activity.TuanChuongTrinhActivity;
 import com.example.daomy.fitnesstutorial3.adapter.BaiTapListAdapter;
 import com.example.daomy.fitnesstutorial3.adapter.ChuongTrinhAdapter;
 import com.example.daomy.fitnesstutorial3.molde.ChuongTrinh;
@@ -62,11 +65,10 @@ public class ChuongTrinhFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                String kieu = list.get(position).getTagh();
-//                FragmentTransaction ft = getFragmentManager().beginTransaction();
-//                ft.replace(R.id.fragment_container, BaitapChiTietFragment.newInstance(kieu))
-//                        .addToBackStack(null)
-//                        .commit();
+                Intent intent=new Intent(getActivity(),TuanChuongTrinhActivity.class);
+                intent.putExtra("tenCT",list.get(position).getTenCT());
+                Log.d("bc1",list.get(position).getTenCT());
+                startActivity(intent);
             }
         });
 

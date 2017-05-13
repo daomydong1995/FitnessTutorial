@@ -20,6 +20,9 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".activity.TuanChuongTrinhActivity">
+
+        </activity>
         <activity android:name=".activity.MainActivity">
 
         </activity>

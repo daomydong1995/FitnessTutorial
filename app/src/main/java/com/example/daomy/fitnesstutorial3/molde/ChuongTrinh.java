@@ -7,7 +7,6 @@ package com.example.daomy.fitnesstutorial3.molde;
 public class ChuongTrinh {
     private int MaCT;
     private String TenCT;
-    private byte[] ImageCT;
     private int NgayCT;
     private String DesCT;
     private int Id;
@@ -15,10 +14,9 @@ public class ChuongTrinh {
     private int SET;
     private int REP;
 
-    public ChuongTrinh(int maCT, String tenCT, byte[] imageCT, int ngayCT, String desCT, int id, String time, int SET, int REP) {
+    public ChuongTrinh(int maCT, String tenCT, int ngayCT, String desCT, int id, String time, int SET, int REP) {
         MaCT = maCT;
         TenCT = tenCT;
-        ImageCT = imageCT;
         NgayCT = ngayCT;
         DesCT = desCT;
         Id = id;
@@ -41,14 +39,6 @@ public class ChuongTrinh {
 
     public void setTenCT(String tenCT) {
         TenCT = tenCT;
-    }
-
-    public byte[] getImageCT() {
-        return ImageCT;
-    }
-
-    public void setImageCT(byte[] imageCT) {
-        ImageCT = imageCT;
     }
 
     public int getNgayCT() {
