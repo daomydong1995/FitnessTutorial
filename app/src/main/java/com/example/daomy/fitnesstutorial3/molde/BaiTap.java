@@ -1,12 +1,15 @@
 package com.example.daomy.fitnesstutorial3.molde;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.Objects;
 
 /**
  * Created by daomy on 5/6/2017.
  */
 
-public class BaiTap {
+public class BaiTap implements Parcelable{
     private int id;
     private String type;
     private String ten;
@@ -28,6 +31,28 @@ public class BaiTap {
     }
 
 
+    protected BaiTap(Parcel in) {
+        id = in.readInt();
+        type = in.readString();
+        ten = in.readString();
+        tagE = in.readString();
+        tagN = in.readString();
+        tagH = in.readString();
+        image = in.createByteArray();
+        huongdan = in.readString();
+    }
+
+    public static final Creator<BaiTap> CREATOR = new Creator<BaiTap>() {
+        @Override
+        public BaiTap createFromParcel(Parcel in) {
+            return new BaiTap(in);
+        }
+
+        @Override
+        public BaiTap[] newArray(int size) {
+            return new BaiTap[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -91,5 +116,22 @@ public class BaiTap {
 
     public void setHuongdan(String huongdan) {
         this.huongdan = huongdan;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(type);
+        dest.writeString(ten);
+        dest.writeString(tagE);
+        dest.writeString(tagN);
+        dest.writeString(tagH);
+        dest.writeByteArray(image);
+        dest.writeString(huongdan);
     }
 }

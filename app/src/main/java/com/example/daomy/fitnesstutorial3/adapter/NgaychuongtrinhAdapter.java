@@ -1,7 +1,6 @@
 package com.example.daomy.fitnesstutorial3.adapter;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.daomy.fitnesstutorial3.R;
-import com.example.daomy.fitnesstutorial3.fragment.MainFragment;
-import com.example.daomy.fitnesstutorial3.fragment.NgaychuongtrinhFragment;
 import com.example.daomy.fitnesstutorial3.molde.ChuongTrinh;
-import com.example.daomy.fitnesstutorial3.molde.ListChuongTrinh;
 
 import java.util.ArrayList;
 
@@ -28,10 +24,11 @@ public class NgaychuongtrinhAdapter extends BaseAdapter {
     private  int layout;
     private ArrayList<ChuongTrinh> chuongTrinhs;
 
-    public NgaychuongtrinhAdapter(Context context, int layout, ArrayList<ChuongTrinh> chuongTrinhs) {
+    public NgaychuongtrinhAdapter(Context context, int layout, ArrayList<ChuongTrinh> chuongTrinhs ) {
         this.context = context;
         this.layout = layout;
         this.chuongTrinhs = chuongTrinhs;
+
     }
 
     @Override
@@ -77,21 +74,20 @@ public class NgaychuongtrinhAdapter extends BaseAdapter {
         ChuongTrinh chuongTrinh = chuongTrinhs.get(position);
 
 
-        Cursor cursor = MainFragment.sqLiteHelper.getData("SELECT ten, image FROM BAITAP WHERE Id = '"+chuongTrinh.getId()+"'");
+//        Cursor cursor = MainFragment.sqLiteHelper.getData("SELECT ten, image FROM BAITAP WHERE Id = '"+chuongTrinh.getId()+"'");
 
-        if(chuongTrinh.getTime() == null){
+        if(chuongTrinh.getTime() == 0 ){
             holder.txtDesCT.setText(chuongTrinh.getSET() + "Hiệp |"+chuongTrinh.getREP() + " Lần");
         }
-        else {
+        else{
             holder.txtDesCT.setText(chuongTrinh.getTime()+" Phút");
         }
 
-        byte[] baitapImage = null;
+            byte[] baitapImage = null;
 
-        while (cursor.moveToNext()) {
-            holder.txtTenCT.setText(cursor.getString(0));
-            baitapImage = cursor.getBlob(1);
-        }
+            holder.txtTenCT.setText(chuongTrinh.getTenBT());
+            baitapImage = chuongTrinh.getImage();
+
 //        Bitmap bitmap = BitmapFactory.decodeByteArray(baitapImage, 0, baitapImage.length);
 
 

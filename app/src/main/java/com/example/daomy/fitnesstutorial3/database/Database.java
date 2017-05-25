@@ -19,7 +19,7 @@ public class Database {
         try {
             String outFileName = activity.getApplicationInfo().dataDir + "/databases/" + databaseName;
             File f = new File(outFileName);
-            if(f.exists()) {
+//            if(!f.exists()) {
                 InputStream e = activity.getAssets().open(databaseName);
                 File folder = new File(activity.getApplicationInfo().dataDir + "/databases/");
                 if (!folder.exists()) {
@@ -36,7 +36,7 @@ public class Database {
                 myOutput.flush();
                 myOutput.close();
                 e.close();
-            }
+//            }
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -33,10 +33,13 @@ public class BaitapChiTietFragment extends Fragment {
     ListView listView;
     ArrayList<BaiTap> list;
     BaitapChiTietAdapter adapter = null;
-    static String tagh = null;
+    private String tagh = null;
     static public BaitapChiTietFragment newInstance(String tag){
-        tagh = tag;
-        return new BaitapChiTietFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("TAGH", tag);
+        BaitapChiTietFragment fragment = new BaitapChiTietFragment();
+        fragment.setArguments(bundle);
+        return fragment;
     }
 
     @Nullable
@@ -44,6 +47,7 @@ public class BaitapChiTietFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 //        return super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.baitap_list_activity,container,false);
+        tagh = getArguments().getString("TAGH");
         listView = (ListView) view.findViewById(R.id.listView);
         list = new ArrayList<>();
         adapter = new BaitapChiTietAdapter(view.getContext(),R.layout.baitap_item,list);

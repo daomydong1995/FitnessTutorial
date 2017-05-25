@@ -3,6 +3,7 @@ package com.example.daomy.fitnesstutorial3.fragment;
 import android.graphics.Color;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -25,23 +26,28 @@ import pl.droidsonroids.gif.GifImageView;
  */
 
 public class HuongdantapFragment extends Fragment {
-    static ArrayList<BaiTap> list = null ;
-    static int poin = 0;
+    private ArrayList<BaiTap> list = null ;
+    private int poin = 0;
 
     TextView textHuongdan;
     GifImageView imgHuongdan;
     Button tagh,tagn,tage;
 
     static public HuongdantapFragment newInstance(ArrayList<BaiTap> list1 , int p){
-        list = list1;
-        poin = p;
-        return new HuongdantapFragment();
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList("LIST", list1);
+        bundle.putInt("POIN", p);
+        HuongdantapFragment fragment = new HuongdantapFragment();
+        fragment.setArguments(bundle);
+        return fragment;
     }
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 //        return super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.huongdantap_fragment,container,false);
+        list = getArguments().getParcelableArrayList("LIST");
+        poin = getArguments().getInt("POIN");
         imgHuongdan = (GifImageView) view.findViewById(R.id.imgHuongdan);
         tagh = (Button) view.findViewById(R.id.tagh);
         tagn = (Button) view.findViewById(R.id.tagn);

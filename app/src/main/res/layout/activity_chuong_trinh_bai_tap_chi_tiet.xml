@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    android:orientation="vertical"
+    tools:context="com.example.daomy.fitnesstutorial3.activity.ChuongTrinhBaiTapChiTietActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpagerChuongTrinhBaiTap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.8"
+        app:layout_behavior="abd" />
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/apppa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabsChuongTrinhBaiTap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:tabGravity="center"
+            app:tabMode="fixed" />
+    </android.support.design.widget.AppBarLayout>
+
+
+</LinearLayout>
